@@ -1,0 +1,121 @@
+.header {
+  @apply fixed top-0 left-0 w-full z-50;
+  background: rgba(255, 255, 255, 0);
+  transition: all .3s;
+
+  .container {
+    @apply flex items-center py-2;
+  }
+
+  &__logo img {
+    @apply w-36 h-36;
+    transition: all .3s;
+  }
+
+  &__menu {
+    @apply ml-auto;
+
+    .menu {
+      @apply relative flex gap-x-12;
+
+      &>.menu-item {
+        a {
+          @apply text-xl text-white font-medium flex flex-col transition duration-500 gap-y-0.5 py-4 xl:text-2xl;
+          transition: all .3s;
+
+          &:after {
+            content: '';
+            @apply block w-0 h-0.5 bg-orange;
+            transition: all .5s;
+          }
+        }
+
+        .sub-menu {
+          @apply opacity-0 flex pointer-events-none absolute right-0 bg-[#505050] p-2;
+
+          .menu-item {
+            @apply block w-44 min-h-full lg:w-36 xl:w-44;
+
+            a {
+              @apply text-white text-base text-center leading-none min-h-full lg:p-2 lg:text-base xl:text-lg xl:p-4;
+
+              &:after {
+                @apply hidden;
+              }
+            }
+
+            img {
+              @apply w-full mt-auto;
+            }
+
+            &:hover {
+              a {
+                @apply bg-black;
+              }
+            }
+          }
+        }
+
+        &-has-children {
+          &:hover {
+            .sub-menu {
+              @apply opacity-100 pointer-events-auto
+            }
+          }
+        }
+
+        &:hover {
+          a {
+            @apply text-orange;
+
+            &:after {
+              @apply w-full;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    @apply relative z-10 flex justify-center items-center flex-col w-6 h-6 gap-y-1 order-1 cursor-pointer xl:order-none xl:hidden;
+
+    span {
+      @apply w-6 h-0.5 bg-black;
+    }
+
+    &.active {
+      span {
+        &:nth-child(1) {
+          @apply hidden;
+        }
+
+        &:nth-child(2) {
+          position: absolute;
+          top: 50%;
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          position: absolute;
+          top: 50%;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &.scroll {
+    background: rgba(255, 255, 255, 1);
+
+    .header__logo img {
+      @apply w-14 h-14;
+    }
+
+    .header__menu {
+      .menu-item a {
+        @apply text-black text-xl;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" id="6a290f4c-aef2-4cc0-a1db-7ceb77eafc2f" customName="imimblockchain" nameFormat="CUSTOM" username="staging_imi_ftps" useOpenSSHConfig="true">
+        <option name="customName" value="imimblockchain" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>

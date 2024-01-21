@@ -1,0 +1,82 @@
+@mixin text {
+  @apply mx-auto my-5 text-xl lg:max-w-[75%];
+
+  a {
+    @apply underline;
+  }
+}
+
+@mixin text-small {
+  @apply mx-auto my-5 text-base lg:max-w-[75%] leading-none;
+
+  a {
+    @apply underline;
+  }
+}
+
+@mixin title-page {
+  @apply font-bold text-5xl;
+}
+
+@mixin title-section {
+  @apply font-medium text-4xl text-center text-orange uppercase mt-10 mb-5 lg:mt-32 lg:mb-10;
+  letter-spacing: 4px;
+}
+
+@mixin title-xl {
+  @apply font-bold text-3xl text-center my-5 lg:my-10;
+
+  span {
+    @apply text-orange;
+  }
+}
+
+@mixin subtitle {
+  @apply font-medium text-2xl capitalize my-9;
+
+  span {
+    @apply text-orange;
+  }
+}
+
+.text {
+  @include text;
+
+  &--left {
+    @apply ml-0;
+  }
+
+  &--center {
+    @apply text-center;
+  }
+
+  &--half {
+    @screen lg {
+      max-width: 50% !important;
+    }
+  }
+}
+
+.text-small {
+  @include text-small;
+
+  &--left {
+    @apply ml-0;
+  }
+}
+
+.title-page {
+  @include title-page;
+}
+
+.title-section {
+  @include title-section;
+}
+
+.subtitle {
+  @include subtitle;
+}
+
+.title-xl {
+  @include title-xl;
+}

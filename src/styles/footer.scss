@@ -1,0 +1,111 @@
+.footer {
+  @apply text-white;
+
+  .container {
+    @apply flex;
+  }
+
+  &__logo {
+    @apply mr-4 xl:mr-16;
+
+    img {
+      @apply h-full object-contain;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  &__title {
+    @apply text-xl font-medium;
+  }
+
+  &__contact {
+    @apply relative pr-10 xl:pr-20;
+
+    &:after {
+      content: '';
+      @apply absolute right-0 top-[2%] h-[96%] w-[2px] bg-[#FD9303];
+    }
+  }
+
+  &__social {
+    @apply flex flex-col gap-y-5 my-auto ml-auto;
+
+    a {
+      svg {
+        @apply w-6 h-6;
+        stroke: white;
+        transition: all .3s;
+      }
+
+      &:hover {
+        svg {
+          stroke: #FD9303;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    @apply mt-auto;
+
+    .menu {
+      @apply flex gap-x-5 xl:gap-x-10;
+
+      &-item {
+        @apply text-base xl:text-xl;
+
+        a {
+          @apply relative flex flex-col;
+
+          &:after {
+            content: '';
+            @apply block h-[2px] w-0 bg-[#FD9303];
+            transition: all .3s;
+          }
+
+          &:hover {
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__subscribe {
+    @apply flex flex-col pl-10 xl:pl-20;
+
+    .subscribe__text {
+      @apply mt-4;
+    }
+
+    .subscribe-form {
+      @apply flex mt-7;
+
+      input {
+        @apply w-60 rounded-[50px] bg-[#EDE7E7] p-2 outline-none text-black;
+      }
+
+      button {
+        @apply px-6 py-1 border border-[#FE9701] rounded-[50px] ml-1 hover:bg-[#FE9701] hover:text-white transition duration-300;
+      }
+    }
+  }
+
+  .contact__item {
+    @apply mt-4;
+
+    .item--title {
+      @apply mb-2 text-base font-medium
+    }
+
+    .item--text {
+      @apply text-sm font-light;
+
+      a {
+        @apply underline;
+      }
+    }
+  }
+}
